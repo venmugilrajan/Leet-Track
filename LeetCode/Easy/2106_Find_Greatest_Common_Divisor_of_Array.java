@@ -56,10 +56,16 @@ class Solution {
         return gcd(b,a%b);
     } 
     public int findGCD(int[] nums) {
-        Arrays.sort(nums);
-        int a=nums[0];
-        int b=nums[nums.length-1];
-        return gcd(a,b);
+        // Arrays.sort(nums);
+       
+        int min=nums[0];
+        int max=nums[0];
+        for(int num:nums){
+            max=Math.max(max,num);
+            min=Math.min(min,num);
+        }
+        
+        return gcd(max,min);
     }
    
     
